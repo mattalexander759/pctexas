@@ -40,6 +40,17 @@ h1 {
   font-weight: 700;
 }
 
+.byline {
+  margin-bottom: 4px;
+  color: #40534a;
+  font-size: 13px;
+}
+
+.bylineInline {
+  color: #40534a;
+  font-size: 12px;
+}
+
 h2 {
   margin-bottom: 10px;
   font-size: 15px;
@@ -76,7 +87,7 @@ h2 {
   font-weight: 700;
 }
 
-.mobileQuickNav {
+.mobileNavHint {
   display: none;
 }
 
@@ -131,17 +142,6 @@ h2 {
 }
 
 .sectionNav {
-}
-
-.reminderText {
-  display: flex;
-  flex: 1;
-  flex-direction: column;
-  gap: 10px;
-}
-
-.reminderText p {
-  margin: 0;
 }
 
 .batchNav {
@@ -380,25 +380,12 @@ button.selected {
     margin-top: 14px;
   }
 
-  .mobileQuickNav {
-    display: grid;
-    grid-template-columns: repeat(4, minmax(0, 1fr));
-    gap: 6px;
+  .mobileNavHint {
+    display: block;
     margin-top: 12px;
-  }
-
-  .mobileQuickNav a {
-    min-height: 34px;
-    border: 1px solid #9bb5a6;
-    background: #fbfefd;
-    color: #17211b;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 4px;
-    text-align: center;
-    text-decoration: none;
-    font-size: 12px;
+    color: #40534a;
+    font-size: 13px;
+    font-weight: 700;
   }
 
   .layout {
@@ -456,10 +443,6 @@ button.selected {
   .question {
     min-height: auto;
     font-size: 18px;
-  }
-
-  .mobileQuickNav {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .landingHero {

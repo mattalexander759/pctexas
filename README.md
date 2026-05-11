@@ -1,4 +1,6 @@
-# Matt's Texas P&C Practice Exam: 25-26
+# Texas P&C Practice Exam: 25'-26'
+
+by Matt
 
 This is a static offline/hostable practice exam generated from `tx_pc_master_study_guide_codex_v6_essential.json`.
 

@@ -1,5 +1,5 @@
 ﻿window.QUIZ_METADATA = {
-    "title":  "Matt\u0027s Texas P\u0026C Practice Exam - 25\u0027-26\u0027 - Essential Timeline Edition",
+    "title":  "Texas P\u0026C Practice Exam: 25\u0027-26\u0027 - Essential Timeline Edition",
     "exam_scope":  "Texas General Lines Property \u0026 Casualty Agent only. Includes only the required Pearson/TDI P\u0026C general knowledge and P\u0026C agent state-specific scope, plus essential timeline/number traps that fit that scope.",
     "item_count":  331,
     "format_note":  "Each item has four answer choices plus an \u0027insight\u0027 field intended to be shown after answering. Questions avoid \u0027all of these except\u0027 structure.",
@@ -3995,5 +3995,6 @@ window.QUIZ_QUESTIONS = [
         "source_basis":  "Texas Insurance Code insurer examination framework / Pearson state outline"
     }
 ];
+
 
 
