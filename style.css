@@ -114,7 +114,7 @@ h2 {
 
 .layout {
   display: grid;
-  grid-template-columns: 228px minmax(0, 1fr) 240px;
+  grid-template-columns: 228px minmax(0, 1fr);
   gap: 14px;
   align-items: start;
 }
@@ -124,24 +124,13 @@ h2 {
   top: 14px;
 }
 
-.sectionNav,
-.insightAside {
+.sectionNav {
   border: 1px solid #c7d9cf;
   background: #eef7f1;
   padding: 12px;
 }
 
 .sectionNav {
-  max-height: calc(100vh - 28px);
-  overflow-y: auto;
-}
-
-.insightAside {
-  color: #263e31;
-  font-size: 13px;
-  min-height: 230px;
-  display: flex;
-  align-items: stretch;
 }
 
 .reminderText {
@@ -153,10 +142,6 @@ h2 {
 
 .reminderText p {
   margin: 0;
-}
-
-.insightAside strong {
-  font-weight: 700;
 }
 
 .batchNav {
@@ -171,8 +156,7 @@ h2 {
   font-size: 13px;
 }
 
-.batchNav button.active,
-.helpfulAcronymsButton.active {
+.batchNav button.active {
   border-color: #4b8f67;
   background: #dff1e5;
   font-weight: 700;
@@ -192,14 +176,6 @@ h2 {
   font-size: 13px;
 }
 
-.acronymDetail {
-  border-left: 3px solid #4b8f67;
-  margin-top: 10px;
-  padding-left: 8px;
-  color: #263e31;
-  font-size: 12px;
-}
-
 .acronymList {
   margin: 0;
 }
@@ -215,6 +191,26 @@ h2 {
 
 .acronymList dd {
   margin: 1px 0 0;
+}
+
+.fullAcronymList {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 8px 14px;
+}
+
+.fullAcronymList dt {
+  margin-top: 0;
+}
+
+.embeddedReminder {
+  border-left: 3px solid #4b8f67;
+  margin: 16px 0;
+  padding-left: 10px;
+}
+
+.embeddedReminder p {
+  margin-bottom: 10px;
 }
 
 .insightNote {
@@ -410,6 +406,11 @@ button.selected {
   }
 
   .content {
+    display: contents;
+  }
+
+  #quizPanel,
+  #summaryPanel {
     order: 1;
   }
 
@@ -417,12 +418,11 @@ button.selected {
     order: 2;
   }
 
-  .insightAside {
+  #tocPanel {
     order: 3;
   }
 
-  .sectionNav,
-  .insightAside {
+  .sectionNav {
     position: static;
   }
 
@@ -441,8 +441,7 @@ button.selected {
   }
 
   .panel,
-  .sectionNav,
-  .insightAside {
+  .sectionNav {
     padding: 12px;
   }
 
@@ -473,6 +472,15 @@ button.selected {
 
   .landingActions .buttonLink {
     width: 100%;
+  }
+
+  .fullAcronymList {
+    grid-template-columns: 1fr;
+    gap: 3px;
+  }
+
+  .fullAcronymList dd {
+    margin-bottom: 10px;
   }
 }
 

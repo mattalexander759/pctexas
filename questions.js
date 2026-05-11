@@ -1,5 +1,5 @@
 ﻿window.QUIZ_METADATA = {
-    "title":  "Matt\u0027s Texas P\u0026C Study Guide - 25\u0027-26\u0027 - Essential Timeline Edition",
+    "title":  "Matt\u0027s Texas P\u0026C Practice Exam - 25\u0027-26\u0027 - Essential Timeline Edition",
     "exam_scope":  "Texas General Lines Property \u0026 Casualty Agent only. Includes only the required Pearson/TDI P\u0026C general knowledge and P\u0026C agent state-specific scope, plus essential timeline/number traps that fit that scope.",
     "item_count":  331,
     "format_note":  "Each item has four answer choices plus an \u0027insight\u0027 field intended to be shown after answering. Questions avoid \u0027all of these except\u0027 structure.",
@@ -13,7 +13,7 @@
                             "P\u0026C Academy cheat-sheet article used only as a non-official checklist for possible timeline/number traps; only essential Texas General Lines P\u0026C scope items were kept and Texas-specific facts were checked against official sources where possible."
                         ],
     "source_caution":  "This is a study aid, not legal advice. For exact statutory wording, use the Texas Insurance Code, Texas Administrative Code, current TDI pages, and current Pearson candidate materials.",
-    "revision_note":  "V6 narrows the V5 timeline add-ons to essential exam-relevant items, removes close-call wording from the added timeline section, and keeps the Codex quiz aligned with the study guide.",
+    "revision_note":  "V6 narrows the V5 timeline add-ons to essential exam-relevant items, removes close-call wording from the added timeline section, and keeps the Codex practice exam aligned with the source material.",
     "removed_as_not_required_for_p_and_c_agent":  [
                                                       "Standalone Surplus Lines exam scope such as Stamping Office, purchasing groups, risk retention groups, reinsurance, surplus-lines application prerequisites, and surplus-lines-only operational details.",
                                                       "Standalone Personal Lines exam sections beyond topics already included in the broader P\u0026C general knowledge outline.",
@@ -3995,4 +3995,5 @@ window.QUIZ_QUESTIONS = [
         "source_basis":  "Texas Insurance Code insurer examination framework / Pearson state outline"
     }
 ];
+
 

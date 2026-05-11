@@ -1,6 +1,6 @@
-# Matt's Texas P&C Study Guide: 25-26
+# Matt's Texas P&C Practice Exam: 25-26
 
-This is a static offline/hostable quiz app generated from `tx_pc_master_study_guide_codex_v6_essential.json`.
+This is a static offline/hostable practice exam generated from `tx_pc_master_study_guide_codex_v6_essential.json`.
 
 ## Run
 

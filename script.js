@@ -4,27 +4,6 @@
   var BATCH_SIZE = 11;
   var STORAGE_KEY = "texasPcStudyGuideProgress_v6_essential";
   var questions = Array.isArray(window.QUIZ_QUESTIONS) ? window.QUIZ_QUESTIONS : [];
-  var acronyms = [
-    { acronym: "DICE", meaning: "Declarations, Insuring agreement, Conditions, Exclusions." },
-    { acronym: "ACV", meaning: "Actual Cash Value: replacement cost minus depreciation." },
-    { acronym: "RC", meaning: "Replacement Cost: replacing with like kind and quality without depreciation when policy conditions are met." },
-    { acronym: "BI/PD", meaning: "Bodily Injury / Property Damage liability." },
-    { acronym: "PIP", meaning: "Personal Injury Protection." },
-    { acronym: "UM/UIM", meaning: "Uninsured Motorist / Underinsured Motorist." },
-    { acronym: "PAP", meaning: "Personal Auto Policy." },
-    { acronym: "CGL", meaning: "Commercial General Liability." },
-    { acronym: "BOP", meaning: "Businessowners Policy." },
-    { acronym: "CPP", meaning: "Commercial Package Policy." },
-    { acronym: "WC", meaning: "Workers compensation." },
-    { acronym: "E&O", meaning: "Errors and Omissions liability." },
-    { acronym: "D&O", meaning: "Directors and Officers liability." },
-    { acronym: "TDI", meaning: "Texas Department of Insurance." },
-    { acronym: "FAIR Plan", meaning: "Texas residual basic home insurance market." },
-    { acronym: "TWIA", meaning: "Texas Windstorm Insurance Association." },
-    { acronym: "TAIPA", meaning: "Texas Automobile Insurance Plan Association." },
-    { acronym: "NFIP", meaning: "National Flood Insurance Program." },
-    { acronym: "TRIA", meaning: "Terrorism Risk Insurance Act." }
-  ];
   var questionById = {};
 
   questions.forEach(function (question) {
@@ -41,12 +20,9 @@
   var repeatButton = document.getElementById("repeatButton");
   var choicesEl = document.getElementById("choices");
   var batchNavEl = document.getElementById("batchNav");
-  var helpfulAcronymsButton = document.getElementById("helpfulAcronyms");
-  var acronymDetailEl = document.getElementById("acronymDetail");
   var summaryEl = document.getElementById("summary");
   var restartBatchButton = document.getElementById("restartBatch");
   var resetProgressButton = document.getElementById("resetProgress");
-  var acronymsOpen = false;
 
   if (new URLSearchParams(window.location.search).get("mode") === "phone") {
     document.body.classList.add("phoneMode");
@@ -54,7 +30,6 @@
 
   var state = loadState();
   normalizeState();
-  renderAcronyms();
   render();
 
   choicesEl.addEventListener("click", function (event) {
@@ -81,7 +56,7 @@
   });
 
   resetProgressButton.addEventListener("click", function () {
-    if (window.confirm("Reset all saved study guide progress?")) {
+    if (window.confirm("Reset all saved practice exam progress?")) {
       state = freshState();
       saveState();
       render();
@@ -95,13 +70,6 @@
     }
     jumpToBatch(Number(button.getAttribute("data-batch-index")));
   });
-
-  if (helpfulAcronymsButton) {
-    helpfulAcronymsButton.addEventListener("click", function () {
-      acronymsOpen = !acronymsOpen;
-      renderAcronyms();
-    });
-  }
 
   summaryEl.addEventListener("click", function (event) {
     if (event.target.closest("#reviewMostMissed")) {
@@ -427,6 +395,7 @@
     state.finished = false;
     saveState();
     render();
+    scrollQuizIntoViewIfCompact();
   }
 
   function jumpToBatch(batchIndex) {
@@ -600,36 +569,6 @@
     }
   }
 
-  function renderAcronyms() {
-    if (!helpfulAcronymsButton || !acronymDetailEl || acronyms.length === 0) {
-      return;
-    }
-
-    helpfulAcronymsButton.classList.toggle("active", acronymsOpen);
-    helpfulAcronymsButton.setAttribute("aria-expanded", String(acronymsOpen));
-    acronymDetailEl.classList.toggle("hidden", !acronymsOpen);
-    acronymDetailEl.innerHTML = "";
-
-    if (!acronymsOpen) {
-      return;
-    }
-
-    var list = document.createElement("dl");
-    list.className = "acronymList";
-
-    acronyms.forEach(function (item, index) {
-      var term = document.createElement("dt");
-      term.textContent = item.acronym;
-      list.appendChild(term);
-
-      var meaning = document.createElement("dd");
-      meaning.textContent = item.meaning;
-      list.appendChild(meaning);
-    });
-
-    acronymDetailEl.appendChild(list);
-  }
-
   function getBatchLabel(batchIndex, start, end) {
     var batchQuestions = getBatchQuestions(batchIndex);
     var firstSection = batchQuestions[0] ? formatSection(batchQuestions[0].section) : "Section";
@@ -693,5 +632,11 @@
     var line = document.createElement("p");
     line.textContent = label + ": " + value;
     summaryEl.appendChild(line);
+  }
+
+  function scrollQuizIntoViewIfCompact() {
+    if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches && quizPanel) {
+      quizPanel.scrollIntoView({ block: "start" });
+    }
   }
 }());

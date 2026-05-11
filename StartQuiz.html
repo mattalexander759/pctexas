@@ -3,26 +3,26 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Matt's Texas P&amp;C Study Guide: 25-26</title>
+  <title>Matt's Texas P&amp;C Practice Exam: 25-26</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
   <main class="app">
     <header class="top">
       <div>
-        <h1>Matt's Texas P&amp;C Study Guide: 25-26</h1>
+        <h1>Matt's Texas P&amp;C Practice Exam: 25-26</h1>
         <p id="progress" class="progress"></p>
       </div>
       <div class="controls">
-        <a class="buttonLink" href="HowToUse.html">How to use this study guide</a>
+        <a class="buttonLink" href="index.html">Change device</a>
+        <a class="buttonLink" href="HowToUse.html">How to use this practice exam</a>
+        <a class="buttonLink" href="mattsPCstudyguide.pdf" download>Download TX P&amp;C Study Guide (pdf)</a>
         <button id="restartBatch" type="button">Restart current batch</button>
         <button id="resetProgress" type="button">Reset progress</button>
       </div>
       <nav class="mobileQuickNav" aria-label="Quick navigation">
-        <a href="#quizPanel">Questions</a>
         <a href="#sectionsNav">Chunks</a>
-        <a href="#reminder">Reminder</a>
-        <a href="#tocPanel">TOC</a>
+        <a href="#tocPanel">Table of Contents</a>
       </nav>
     </header>
 
@@ -32,8 +32,7 @@
         <p class="insightNote">The "insights" are part of the exam. Pay attention to them.</p>
         <div id="batchNav" class="batchNav"></div>
         <div class="acronymNav" aria-label="Helpful acronyms">
-          <button id="helpfulAcronyms" class="helpfulAcronymsButton" type="button">Helpful acronyms</button>
-          <div id="acronymDetail" class="acronymDetail hidden"></div>
+          <a class="buttonLink helpfulAcronymsButton" href="HelpfulAcronyms.html">Helpful acronyms</a>
         </div>
       </aside>
 
@@ -61,7 +60,7 @@
         </section>
 
         <section id="tocPanel" class="panel tocPanel" aria-labelledby="tocHeading">
-          <h2 id="tocHeading">Table of contents</h2>
+          <h2 id="tocHeading">Table of Contents</h2>
           <div class="tocTableWrap">
             <table class="tocTable">
               <thead>
@@ -183,13 +182,6 @@
         </section>
       </div>
 
-      <aside id="reminder" class="insightAside" aria-label="Insights reminder">
-        <div class="reminderText">
-          <p><strong>REMINDER:</strong> Pay attention to the "insights" for each question.</p>
-          <p>They provide context and explain roughly WHY, HOW and WHEN you are supposed to apply the concepts.</p>
-          <p>Simply memorizing specific phrasing is doomed to fail because they will change up the phrasing in the actual exam.</p>
-        </div>
-      </aside>
     </div>
   </main>
 
