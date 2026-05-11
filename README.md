@@ -14,6 +14,7 @@ No server is required. There are no external dependencies. The app works offline
 
 - Questions are shown in batches of 11.
 - This version has 331 questions.
+- The homepage also links to a separate Limited Lines 2025 practice exam with 127 questions.
 - Missed questions from a batch are reviewed until answered correctly.
 - Use **Repeat question** after answering if you got it right but want to see it again.
 - Insights are shown after each answer and should be studied.
