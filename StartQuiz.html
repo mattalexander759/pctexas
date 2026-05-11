@@ -1,0 +1,199 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Matt's Texas P&amp;C Study Guide: 25-26</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Matt's Texas P&amp;C Study Guide: 25-26</h1>
+        <p id="progress" class="progress"></p>
+      </div>
+      <div class="controls">
+        <a class="buttonLink" href="HowToUse.html">How to use this study guide</a>
+        <button id="restartBatch" type="button">Restart current batch</button>
+        <button id="resetProgress" type="button">Reset progress</button>
+      </div>
+      <nav class="mobileQuickNav" aria-label="Quick navigation">
+        <a href="#quizPanel">Questions</a>
+        <a href="#sectionsNav">Chunks</a>
+        <a href="#reminder">Reminder</a>
+        <a href="#tocPanel">TOC</a>
+      </nav>
+    </header>
+
+    <div class="layout">
+      <aside id="sectionsNav" class="sectionNav" aria-label="Quiz batches">
+        <h2>Sections</h2>
+        <p class="insightNote">The "insights" are part of the exam. Pay attention to them.</p>
+        <div id="batchNav" class="batchNav"></div>
+        <div class="acronymNav" aria-label="Helpful acronyms">
+          <button id="helpfulAcronyms" class="helpfulAcronymsButton" type="button">Helpful acronyms</button>
+          <div id="acronymDetail" class="acronymDetail hidden"></div>
+        </div>
+      </aside>
+
+      <div class="content">
+        <section id="quizPanel" class="panel">
+          <div id="sectionLabel" class="sectionLabel"></div>
+          <div id="questionText" class="question"></div>
+          <div id="choices" class="choices" aria-label="Answer choices">
+            <button type="button" data-choice="A">A</button>
+            <button type="button" data-choice="B">B</button>
+            <button type="button" data-choice="C">C</button>
+            <button type="button" data-choice="D">D</button>
+            <button class="unknownChoice" type="button" data-choice="IDK">I don't know</button>
+          </div>
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+          <div class="actionRow">
+            <button id="repeatButton" class="secondary" type="button" disabled>Repeat question</button>
+            <button id="nextButton" class="next" type="button" disabled>Next</button>
+          </div>
+        </section>
+
+        <section id="summaryPanel" class="panel hidden">
+          <h2>Final summary</h2>
+          <div id="summary"></div>
+        </section>
+
+        <section id="tocPanel" class="panel tocPanel" aria-labelledby="tocHeading">
+          <h2 id="tocHeading">Table of contents</h2>
+          <div class="tocTableWrap">
+            <table class="tocTable">
+              <thead>
+                <tr>
+                  <th>Section</th>
+                  <th>Question IDs</th>
+                  <th>Covers</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Scope / sources / excluded exams</td>
+                  <td>-</td>
+                  <td>Strict General Lines P&amp;C only; excludes standalone Surplus Lines, Adjuster, Risk Manager, MGA, Life/Health/HMO</td>
+                </tr>
+                <tr>
+                  <td>Core insurance basics</td>
+                  <td>TXPC-001-010</td>
+                  <td>Insurance, risk, exposure, premium, insurable interest, indemnity, subrogation</td>
+                </tr>
+                <tr>
+                  <td>Hazards, perils, losses, valuation</td>
+                  <td>TXPC-011-031</td>
+                  <td>Hazards/perils, direct/indirect loss, ACV, replacement cost, coinsurance, deductibles, salvage</td>
+                </tr>
+                <tr>
+                  <td>Liability, causation, damages</td>
+                  <td>TXPC-032-046</td>
+                  <td>Negligence, liability, proximate cause, occurrence, damages, comparative negligence</td>
+                </tr>
+                <tr>
+                  <td>Temporary coverage / policy changes</td>
+                  <td>TXPC-047-050</td>
+                  <td>Binders, endorsements, cancellation/nonrenewal basics</td>
+                </tr>
+                <tr>
+                  <td>Policy structure and provisions</td>
+                  <td>TXPC-051-075</td>
+                  <td>DICE, declarations, insuring agreement, conditions, exclusions, duties, limits, policy status</td>
+                </tr>
+                <tr>
+                  <td>Contract law / fraud / underwriting</td>
+                  <td>TXPC-076-097</td>
+                  <td>Contract elements, aleatory/adhesion, warranties, misrepresentation, privacy, TRIA</td>
+                </tr>
+                <tr>
+                  <td>Homeowners forms and coverages</td>
+                  <td>TXPC-098-109</td>
+                  <td>HO-2, HO-3, HO-4, HO-5, HO-6, HO-8; Coverage A-F</td>
+                </tr>
+                <tr>
+                  <td>Dwelling and property forms</td>
+                  <td>TXPC-110-139</td>
+                  <td>DP-1, DP-2, DP-3, commercial property, CPP, inland marine, flood, earthquake, farm, BOP</td>
+                </tr>
+                <tr>
+                  <td>Commercial casualty</td>
+                  <td>TXPC-140-151</td>
+                  <td>CGL, BI/PD, personal and advertising injury, products/completed ops, occurrence vs claims-made</td>
+                </tr>
+                <tr>
+                  <td>Auto insurance</td>
+                  <td>TXPC-152-174</td>
+                  <td>PAP, liability, med pay/PIP, UM/UIM, collision, OTC, business auto, garagekeepers</td>
+                </tr>
+                <tr>
+                  <td>Workers comp / crime / bonds / professional liability / umbrella</td>
+                  <td>TXPC-175-195</td>
+                  <td>WC, employers liability, crime forms, surety bonds, E&amp;O/D&amp;O/cyber, umbrella/excess</td>
+                </tr>
+                <tr>
+                  <td>Texas licensing and TDI authority</td>
+                  <td>TXPC-196-232</td>
+                  <td>Commissioner/TDI, license types, appointment, CE, renewal, penalties, discipline</td>
+                </tr>
+                <tr>
+                  <td>Texas unfair practices and marketing</td>
+                  <td>TXPC-233-242</td>
+                  <td>Misrepresentation, rebating, twisting, defamation, boycott/coercion, discrimination, fraud</td>
+                </tr>
+                <tr>
+                  <td>Texas property rules</td>
+                  <td>TXPC-243-251</td>
+                  <td>FAIR Plan, TWIA, Mine Subsidence, residential property rules, flood disclosure, catastrophe notices</td>
+                </tr>
+                <tr>
+                  <td>Texas auto rules</td>
+                  <td>TXPC-252-259</td>
+                  <td>Financial responsibility, liability minimums, PIP, UM/UIM, cancellation/nonrenewal, Texas Auto Plan</td>
+                </tr>
+                <tr>
+                  <td>Texas workers comp / organizations / claims</td>
+                  <td>TXPC-260-268</td>
+                  <td>WC basics, guaranty association, FAIR/TWIA/Auto Plan, claims settlement, consumer protection</td>
+                </tr>
+                <tr>
+                  <td>High-yield scenarios</td>
+                  <td>TXPC-269-298</td>
+                  <td>Mixed practice scenarios across terms, forms, liability, auto, Texas law, and tricky distinctions</td>
+                </tr>
+                <tr>
+                  <td>Surplus lines overlap only</td>
+                  <td>TXPC-299-301</td>
+                  <td>Only the P&amp;C-agent-outline overlap: diligent search, eligible insurer, guaranty limitation</td>
+                </tr>
+                <tr>
+                  <td>Essential timelines and number traps</td>
+                  <td>TXPC-302-331</td>
+                  <td>Claim deadlines, policyholder duties, NFIP timing, claims-made timing, homeowners/auto notices, licensing, CE, appointments, and carrier examination timing</td>
+                </tr>
+                <tr>
+                  <td>Helpful acronyms</td>
+                  <td>Sidebar</td>
+                  <td>DICE, ACV, RC, BI/PD, PIP, UM/UIM, PAP, CGL, BOP, CPP, WC, E&amp;O, D&amp;O, TDI, FAIR Plan, TWIA, TAIPA, NFIP, TRIA</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+      </div>
+
+      <aside id="reminder" class="insightAside" aria-label="Insights reminder">
+        <div class="reminderText">
+          <p><strong>REMINDER:</strong> Pay attention to the "insights" for each question.</p>
+          <p>They provide context and explain roughly WHY, HOW and WHEN you are supposed to apply the concepts.</p>
+          <p>Simply memorizing specific phrasing is doomed to fail because they will change up the phrasing in the actual exam.</p>
+        </div>
+      </aside>
+    </div>
+  </main>
+
+  <script src="questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
