@@ -1,4 +1,4 @@
-<!doctype html>
+﻿<!doctype html>
 <html lang="en">
 <head>
   <meta charset="utf-8">
@@ -12,29 +12,28 @@
       <div>
         <h1>Texas P&amp;C Practice Exam: 25'-26'</h1>
         <p class="byline">by Matt</p>
-        <p id="progress" class="progress"></p>
       </div>
       <div class="controls">
-        <a class="buttonLink" href="index.html">Change device</a>
+        <a class="buttonLink" href="index.html">Home / Change Device</a>
         <a class="buttonLink" href="HowToUse.html">How to use this practice exam</a>
         <button id="restartBatch" type="button">Restart current batch</button>
         <button id="resetProgress" type="button">Reset progress</button>
       </div>
-      <p class="mobileNavHint">Scroll down to navigate sections and view Table of Contents.</p>
     </header>
 
     <div class="layout">
       <aside id="sectionsNav" class="sectionNav" aria-label="Quiz batches">
-        <h2>Sections</h2>
-        <p class="insightNote">The "insights" are part of the exam. Pay attention to them.</p>
+        <h2>Navigate Sections</h2>
         <div id="batchNav" class="batchNav"></div>
         <div class="acronymNav" aria-label="Helpful acronyms">
           <a class="buttonLink helpfulAcronymsButton" href="HelpfulAcronyms.html">Helpful acronyms</a>
+          <a class="buttonLink helpfulAcronymsButton" href="Symbols.html">Symbols</a>
         </div>
       </aside>
 
       <div class="content">
         <section id="quizPanel" class="panel">
+          <p id="progress" class="progress quizProgress"></p>
           <div id="sectionLabel" class="sectionLabel"></div>
           <div id="questionText" class="question"></div>
           <div id="choices" class="choices" aria-label="Answer choices">
@@ -186,3 +185,4 @@
   <script src="script.js"></script>
 </body>
 </html>
+
