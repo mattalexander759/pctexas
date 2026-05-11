@@ -2,7 +2,7 @@
   "use strict";
 
   var BATCH_SIZE = 11;
-  var STORAGE_KEY = "texasPcStudyGuideProgress_v6_essential";
+  var STORAGE_KEY = window.QUIZ_STORAGE_KEY || "texasPcStudyGuideProgress_v6_essential";
   var questions = Array.isArray(window.QUIZ_QUESTIONS) ? window.QUIZ_QUESTIONS : [];
   var questionById = {};
 
@@ -26,6 +26,12 @@
 
   if (new URLSearchParams(window.location.search).get("mode") === "phone") {
     document.body.classList.add("phoneMode");
+    if ("scrollRestoration" in window.history) {
+      window.history.scrollRestoration = "manual";
+    }
+    window.setTimeout(function () {
+      window.scrollTo(0, 0);
+    }, 0);
   }
 
   var state = loadState();
@@ -395,7 +401,7 @@
     state.finished = false;
     saveState();
     render();
-    scrollQuizIntoViewIfCompact();
+    scrollToPageTop();
   }
 
   function jumpToBatch(batchIndex) {
@@ -409,6 +415,7 @@
     state.finished = false;
     saveState();
     render();
+    scrollToPageTop();
   }
 
   function startMostMissedReview() {
@@ -574,7 +581,8 @@
     var firstSection = batchQuestions[0] ? formatSection(batchQuestions[0].section) : "Section";
     var lastSection = batchQuestions[batchQuestions.length - 1] ? formatSection(batchQuestions[batchQuestions.length - 1].section) : firstSection;
     var sectionText = firstSection === lastSection ? firstSection : firstSection + " / " + lastSection;
-    return "Batch " + (batchIndex + 1) + " (" + start + "-" + end + "): " + sectionText;
+    var label = "Batch " + (batchIndex + 1) + " (" + start + "-" + end + ")";
+    return sectionText ? label + ": " + sectionText : label;
   }
 
   function renderSummary() {
@@ -634,9 +642,7 @@
     summaryEl.appendChild(line);
   }
 
-  function scrollQuizIntoViewIfCompact() {
-    if (window.matchMedia && window.matchMedia("(max-width: 900px)").matches && quizPanel) {
-      quizPanel.scrollIntoView({ block: "start" });
-    }
+  function scrollToPageTop() {
+    window.scrollTo({ top: 0, left: 0, behavior: "smooth" });
   }
 }());

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Limited Lines Practice Exam: 2025</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <main class="app">
+    <header class="top">
+      <div>
+        <h1>Limited Lines Practice Exam: 2025</h1>
+        <p class="byline">by Matt</p>
+      </div>
+      <div class="controls">
+        <a class="buttonLink" href="index.html">Home / Change Device</a>
+        <button id="restartBatch" type="button">Restart current batch</button>
+        <button id="resetProgress" type="button">Reset progress</button>
+      </div>
+      <p class="mobileNavHint">Scroll to the bottom to Navigate Sections.</p>
+    </header>
+
+    <div class="layout">
+      <aside id="sectionsNav" class="sectionNav" aria-label="Quiz batches">
+        <h2>Navigate Sections</h2>
+        <div id="batchNav" class="batchNav"></div>
+      </aside>
+
+      <div class="content">
+        <section id="quizPanel" class="panel">
+          <p id="progress" class="progress quizProgress"></p>
+          <div id="sectionLabel" class="sectionLabel"></div>
+          <div id="questionText" class="question"></div>
+          <div id="choices" class="choices" aria-label="Answer choices">
+            <button type="button" data-choice="A">A</button>
+            <button type="button" data-choice="B">B</button>
+            <button type="button" data-choice="C">C</button>
+            <button type="button" data-choice="D">D</button>
+            <button class="unknownChoice" type="button" data-choice="IDK">I don't know</button>
+          </div>
+          <div id="feedback" class="feedback" aria-live="polite"></div>
+          <div class="actionRow">
+            <button id="repeatButton" class="secondary" type="button" disabled>Repeat question</button>
+            <button id="nextButton" class="next" type="button" disabled>Next</button>
+          </div>
+        </section>
+
+        <section id="summaryPanel" class="panel hidden">
+          <h2>Final summary</h2>
+          <div id="summary"></div>
+        </section>
+      </div>
+    </div>
+  </main>
+
+  <script src="limited-questions.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
